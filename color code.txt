@@ -1,0 +1,4 @@
+* **Deep Maroon:** `#5B1E1E`
+* **Light Gray:** `#AFAFAF`
+* **Pure White:** `#FFFFFF`
+* **Drop Shadow Gray:** `#9E9A9A`
