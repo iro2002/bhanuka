@@ -13,8 +13,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-32 px-6 lg:px-16 overflow-hidden"
-      style={{ backgroundColor: "#FFFFFF" }}
+      className="relative py-32 px-6 lg:px-16 overflow-hidden bg-black"
     >
       {/* Massive Background Typography Accent */}
       <motion.div
@@ -22,10 +21,10 @@ const Contact = () => {
         whileInView={{ opacity: 0.08, scale: 1 }}
         transition={{ duration: 2, ease: cinematicEase }}
         viewport={{ once: true }}
-        className="absolute top-10 -left-10 text-[20vw] font-['Montserrat',_sans-serif] font-black leading-none pointer-events-none select-none z-0"
+        className="absolute top-10 -left-10 text-[20vw] font-['Montserrat',_sans-serif] font-thin leading-none pointer-events-none select-none z-0"
         style={{
-          color: "#5B1E1E",
-          textShadow: "10px 10px 0px #9E9A9A",
+          color: "#333333",
+          textShadow: "10px 10px 0px #111111",
         }}
       >
         CONTACT
@@ -41,25 +40,25 @@ const Contact = () => {
           className="mb-16"
         >
           <h4
-            className="text-sm font-['Roboto_Condensed',_sans-serif] font-bold tracking-[0.3em] uppercase mb-4"
-            style={{ color: "#5B1E1E", opacity: 0.7 }}
+            className="text-sm font-['Roboto_Condensed',_sans-serif] font-light tracking-[0.3em] uppercase mb-4"
+            style={{ color: "#CCCCCC", opacity: 0.7 }}
           >
             Inquiries
           </h4>
 
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-['Montserrat',_sans-serif] font-bold leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-['Montserrat',_sans-serif] font-thin leading-tight"
             style={{
-              color: "#5B1E1E",
-              textShadow: "4px 4px 0px #9E9A9A",
+              color: "#FFFFFF",
+              textShadow: "4px 4px 0px #333333",
             }}
           >
             Let's Collaborate <br />
             <span
-              className="italic font-normal font-['Lobster_Two',_cursive] tracking-wide"
+              className="italic font-light font-['Cormorant_Garamond',_serif] tracking-wide"
               style={{
                 color: "#AFAFAF",
-                textShadow: "2px 2px 0px rgba(158,154,154,0.6)",
+                textShadow: "2px 2px 0px rgba(0,0,0,0.6)",
               }}
             >
               Get In Touch.
@@ -80,60 +79,60 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#5B1E1E" }}>
+                  <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#FFFFFF" }}>
                     Your Name
                   </label>
                   <input
                     type="text"
                     required
-                    className="w-full py-3 px-4 outline-none border focus:border-[#5B1E1E] transition-colors"
-                    style={{ borderColor: "rgba(158,154,154,0.5)", backgroundColor: "rgba(255,255,255,0.8)" }}
+                    className="w-full py-3 px-4 outline-none border focus:border-white transition-colors text-white"
+                    style={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.05)" }}
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#5B1E1E" }}>
+                  <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#FFFFFF" }}>
                     Email Address
                   </label>
                   <input
                     type="email"
                     required
-                    className="w-full py-3 px-4 outline-none border focus:border-[#5B1E1E] transition-colors"
-                    style={{ borderColor: "rgba(158,154,154,0.5)", backgroundColor: "rgba(255,255,255,0.8)" }}
+                    className="w-full py-3 px-4 outline-none border focus:border-white transition-colors text-white"
+                    style={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.05)" }}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#5B1E1E" }}>
+                <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#FFFFFF" }}>
                   Subject
                 </label>
                 <input
                   type="text"
                   required
-                  className="w-full py-3 px-4 outline-none border focus:border-[#5B1E1E] transition-colors"
-                  style={{ borderColor: "rgba(158,154,154,0.5)", backgroundColor: "rgba(255,255,255,0.8)" }}
+                  className="w-full py-3 px-4 outline-none border focus:border-white transition-colors text-white"
+                  style={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.05)" }}
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#5B1E1E" }}>
+                <label className="block text-xs font-['Roboto_Condensed',_sans-serif] tracking-widest uppercase mb-2" style={{ color: "#FFFFFF" }}>
                   Message
                 </label>
                 <textarea
                   rows="6"
                   required
-                  className="w-full py-3 px-4 outline-none border focus:border-[#5B1E1E] transition-colors resize-none"
-                  style={{ borderColor: "rgba(158,154,154,0.5)", backgroundColor: "rgba(255,255,255,0.8)" }}
+                  className="w-full py-3 px-4 outline-none border focus:border-white transition-colors resize-none text-white"
+                  style={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.05)" }}
                 />
               </div>
 
               <button
                 type="submit"
-                className="py-4 px-8 text-sm tracking-widest uppercase font-['Roboto_Condensed',_sans-serif] font-bold transition-all duration-300"
+                className="py-4 px-8 text-sm tracking-widest uppercase font-['Roboto_Condensed',_sans-serif] font-light transition-all duration-300"
                 style={{
-                  color: "#FFFFFF",
-                  backgroundColor: "#5B1E1E",
-                  boxShadow: "6px 6px 0px #9E9A9A",
+                  color: "#000000",
+                  backgroundColor: "#FFFFFF",
+                  boxShadow: "6px 6px 0px #333333",
                 }}
               >
                 Send Message
@@ -150,29 +149,29 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <div>
-              <h4 className="text-xs font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase mb-2" style={{ color: "#AFAFAF" }}>
+              <h4 className="text-xs font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase mb-2" style={{ color: "#AFAFAF" }}>
                 Location
               </h4>
-              <p className="text-xl font-['Open_Sans',_sans-serif] font-light" style={{ color: "#5B1E1E" }}>
+              <p className="text-xl font-['Open_Sans',_sans-serif] font-light" style={{ color: "#FFFFFF" }}>
                 Colombo & Badulla, <br /> Sri Lanka
               </p>
             </div>
 
             <div>
-              <h4 className="text-xs font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase mb-2" style={{ color: "#AFAFAF" }}>
+              <h4 className="text-xs font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase mb-2" style={{ color: "#AFAFAF" }}>
                 Email
               </h4>
               <a
                 href="mailto:contact@bhanuka.com"
                 className="text-xl font-['Open_Sans',_sans-serif] font-light hover:opacity-70 transition-opacity"
-                style={{ color: "#5B1E1E" }}
+                style={{ color: "#FFFFFF" }}
               >
                 contact@bhanuka.com
               </a>
             </div>
 
             <div>
-              <h4 className="text-xs font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase mb-2" style={{ color: "#AFAFAF" }}>
+              <h4 className="text-xs font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase mb-2" style={{ color: "#AFAFAF" }}>
                 Socials
               </h4>
               <div className="flex flex-col space-y-2">
@@ -180,8 +179,8 @@ const Contact = () => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-base font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase hover:translate-x-2 transition-transform duration-300"
-                  style={{ color: "#5B1E1E" }}
+                  className="text-base font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase hover:translate-x-2 transition-transform duration-300"
+                  style={{ color: "#FFFFFF" }}
                 >
                   Instagram &rarr;
                 </a>
@@ -189,8 +188,8 @@ const Contact = () => {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-base font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase hover:translate-x-2 transition-transform duration-300"
-                  style={{ color: "#5B1E1E" }}
+                  className="text-base font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase hover:translate-x-2 transition-transform duration-300"
+                  style={{ color: "#FFFFFF" }}
                 >
                   YouTube &rarr;
                 </a>
@@ -198,8 +197,8 @@ const Contact = () => {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-base font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase hover:translate-x-2 transition-transform duration-300"
-                  style={{ color: "#5B1E1E" }}
+                  className="text-base font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase hover:translate-x-2 transition-transform duration-300"
+                  style={{ color: "#FFFFFF" }}
                 >
                   Facebook &rarr;
                 </a>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -16,40 +18,44 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Work", href: "#projects" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Work", href: "/work" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        scrolled ? "bg-black/90 backdrop-blur-sm shadow-md" : "bg-black/80 sm:bg-transparent"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-y-4">
+      <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-16 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+        
         {/* LOGO */}
-        <a
-          href="#hero"
-          className="font-['Montserrat',_sans-serif] font-black text-xl tracking-[0.2em] transition-colors duration-300"
-          style={{ color: scrolled ? "#5B1E1E" : "#FFFFFF" }}
+        <Link
+          to="/"
+          className="font-['Montserrat',_sans-serif] font-thin text-xl sm:text-2xl tracking-[0.3em] transition-colors duration-300 text-white hover:text-gray-300 z-50 relative"
         >
           BHANUKA
-        </a>
+        </Link>
 
-        {/* NAV LINKS (Visible on all sizes, no hamburger menu) */}
-        <nav className="flex items-center space-x-5 sm:space-x-8 flex-wrap justify-center">
+        {/* ALL NAV LINKS (Directly visible on mobile and desktop) */}
+        <nav className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 sm:gap-x-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
-              className="text-[10px] sm:text-xs font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest uppercase hover:opacity-75 transition-opacity duration-300"
-              style={{ color: scrolled ? "#5B1E1E" : "#FFFFFF" }}
+              to={link.href}
+              className={`text-[11px] sm:text-xs font-['Roboto_Condensed',_sans-serif] font-light tracking-widest uppercase hover:opacity-75 transition-opacity duration-300 ${
+                location.pathname === link.href ? "text-white" : "text-gray-400"
+              }`}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
+        
       </div>
     </header>
   );

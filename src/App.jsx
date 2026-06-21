@@ -1,21 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Project from "./components/Project";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
+import Loader from "./components/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loader for 3.5 seconds to complete the cinematic intro
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div>
+    <div className="bg-black min-h-screen text-white">
+      <AnimatePresence mode="wait">
+        {loading && <Loader key="loader" />}
+      </AnimatePresence>
+      
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Project />
-        <Gallery />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Project />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
     </div>
   );

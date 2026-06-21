@@ -21,8 +21,7 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="relative py-32 px-6 lg:px-16 overflow-hidden"
-      style={{ backgroundColor: "#FFFFFF" }}
+      className="relative py-32 px-6 lg:px-16 overflow-hidden bg-black"
     >
       {/* Massive Background Typography Accent - matching About.jsx */}
       <motion.div
@@ -30,10 +29,10 @@ const Project = () => {
         whileInView={{ opacity: 0.08, scale: 1 }}
         transition={{ duration: 2, ease: cinematicEase }}
         viewport={{ once: true }}
-        className="absolute top-10 -left-10 text-[20vw] font-['Montserrat',_sans-serif] font-black leading-none pointer-events-none select-none z-0"
+        className="absolute top-10 -left-10 text-[20vw] font-['Montserrat',_sans-serif] font-thin leading-none pointer-events-none select-none z-0"
         style={{
-          color: "#5B1E1E",
-          textShadow: "10px 10px 0px #9E9A9A",
+          color: "#333333",
+          textShadow: "10px 10px 0px #111111",
         }}
       >
         WORK
@@ -49,25 +48,25 @@ const Project = () => {
           className="mb-16"
         >
           <h4
-            className="text-sm font-['Roboto_Condensed',_sans-serif] font-bold tracking-[0.3em] uppercase mb-4"
-            style={{ color: "#5B1E1E", opacity: 0.7 }}
+            className="text-sm font-['Roboto_Condensed',_sans-serif] font-light tracking-[0.3em] uppercase mb-4"
+            style={{ color: "#CCCCCC", opacity: 0.7 }}
           >
             Portfolio
           </h4>
 
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-['Montserrat',_sans-serif] font-bold leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-['Montserrat',_sans-serif] font-thin leading-tight"
             style={{
-              color: "#5B1E1E",
-              textShadow: "4px 4px 0px #9E9A9A",
+              color: "#FFFFFF",
+              textShadow: "4px 4px 0px #333333",
             }}
           >
             Selected Work <br />
             <span
-              className="italic font-normal font-['Lobster_Two',_cursive] tracking-wide"
+              className="italic font-light font-['Cormorant_Garamond',_serif] tracking-wide"
               style={{
                 color: "#AFAFAF",
-                textShadow: "2px 2px 0px rgba(158,154,154,0.6)",
+                textShadow: "2px 2px 0px rgba(0,0,0,0.6)",
               }}
             >
               Through Light & Motion.
@@ -81,11 +80,11 @@ const Project = () => {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className="py-3 px-6 text-sm tracking-widest uppercase transition-all duration-300 font-['Roboto_Condensed',_sans-serif] font-bold rounded-sm"
+              className="py-3 px-6 text-sm tracking-widest uppercase transition-all duration-300 font-['Roboto_Condensed',_sans-serif] font-light rounded-sm"
               style={{
-                color: active === cat ? "#FFFFFF" : "#5B1E1E",
-                backgroundColor: active === cat ? "#5B1E1E" : "rgba(175,175,175,0.08)",
-                boxShadow: active === cat ? "4px 4px 0px #9E9A9A" : "none",
+                color: active === cat ? "#000000" : "#FFFFFF",
+                backgroundColor: active === cat ? "#FFFFFF" : "rgba(255,255,255,0.08)",
+                boxShadow: active === cat ? "4px 4px 0px #333333" : "none",
               }}
             >
               {cat}
@@ -109,9 +108,9 @@ const Project = () => {
                 transition={{ duration: 0.4 }}
                 className="relative group overflow-hidden rounded-lg"
                 style={{
-                  boxShadow: "10px 10px 0px #9E9A9A",
-                  border: "1px solid rgba(158,154,154,0.4)",
-                  backgroundColor: "#FFFFFF",
+                  boxShadow: "10px 10px 0px #333333",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  backgroundColor: "#111111",
                 }}
               >
                 <iframe
@@ -133,7 +132,7 @@ const Project = () => {
                 {/* label */}
                 <div className="absolute bottom-4 left-4 pointer-events-none">
                   <p
-                    className="text-xs tracking-widest uppercase font-['Roboto_Condensed',_sans-serif] font-bold"
+                    className="text-xs tracking-widest uppercase font-['Roboto_Condensed',_sans-serif] font-light"
                     style={{ color: "#FFFFFF", textShadow: "1px 1px 2px rgba(0,0,0,0.8)" }}
                   >
                     Cinematic Work

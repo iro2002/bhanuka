@@ -31,8 +31,7 @@ const Gallery = () => {
   return (
     <section
       id="gallery"
-      className="relative py-32 px-6 lg:px-16 overflow-hidden"
-      style={{ backgroundColor: "#FFFFFF" }}
+      className="relative py-32 px-6 lg:px-16 overflow-hidden bg-black"
     >
       {/* Massive Background Typography Accent */}
       <motion.div
@@ -40,10 +39,10 @@ const Gallery = () => {
         whileInView={{ opacity: 0.08, scale: 1 }}
         transition={{ duration: 2, ease: cinematicEase }}
         viewport={{ once: true }}
-        className="absolute top-10 -left-10 text-[20vw] font-['Montserrat',_sans-serif] font-black leading-none pointer-events-none select-none z-0"
+        className="absolute top-10 -left-10 text-[20vw] font-['Montserrat',_sans-serif] font-thin leading-none pointer-events-none select-none z-0"
         style={{
-          color: "#5B1E1E",
-          textShadow: "10px 10px 0px #9E9A9A",
+          color: "#333333",
+          textShadow: "10px 10px 0px #111111",
         }}
       >
         GALLERY
@@ -59,25 +58,25 @@ const Gallery = () => {
           className="mb-12"
         >
           <h4
-            className="text-sm font-['Roboto_Condensed',_sans-serif] font-bold tracking-[0.3em] uppercase mb-4"
-            style={{ color: "#5B1E1E", opacity: 0.7 }}
+            className="text-sm font-['Roboto_Condensed',_sans-serif] font-light tracking-[0.3em] uppercase mb-4"
+            style={{ color: "#CCCCCC", opacity: 0.7 }}
           >
             Visuals
           </h4>
 
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-['Montserrat',_sans-serif] font-bold leading-tight mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-['Montserrat',_sans-serif] font-thin leading-tight mb-8"
             style={{
-              color: "#5B1E1E",
-              textShadow: "4px 4px 0px #9E9A9A",
+              color: "#FFFFFF",
+              textShadow: "4px 4px 0px #333333",
             }}
           >
             Captured Moments <br />
             <span
-              className="italic font-normal font-['Lobster_Two',_cursive] tracking-wide"
+              className="italic font-light font-['Cormorant_Garamond',_serif] tracking-wide"
               style={{
                 color: "#AFAFAF",
-                textShadow: "2px 2px 0px rgba(158,154,154,0.6)",
+                textShadow: "2px 2px 0px rgba(0,0,0,0.6)",
               }}
             >
               Behind The Lens.
@@ -90,15 +89,15 @@ const Gallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3 }}
             viewport={{ once: true }}
-            className="max-w-4xl p-8 border-l-4 my-10 bg-gray-50/50 backdrop-blur-sm"
+            className="max-w-4xl p-8 border-l-4 my-10 bg-gray-900/50 backdrop-blur-sm"
             style={{
-              borderColor: "#5B1E1E",
-              boxShadow: "6px 6px 0px rgba(158,154,154,0.15)",
+              borderColor: "#FFFFFF",
+              boxShadow: "6px 6px 0px rgba(51,51,51,0.5)",
             }}
           >
             <p 
-              className="text-lg md:text-xl font-['Montserrat',_sans-serif] font-bold tracking-wide uppercase leading-relaxed"
-              style={{ color: "#5B1E1E" }}
+              className="text-lg md:text-xl font-['Montserrat',_sans-serif] font-light tracking-wide uppercase leading-relaxed"
+              style={{ color: "#FFFFFF" }}
             >
               "Our team is prepared to operate this range of camera and lighting systems with proactive precision and maximum efficiency."
             </p>
@@ -117,8 +116,8 @@ const Gallery = () => {
               onClick={() => setSelectedImg(img)}
               className="relative cursor-pointer group overflow-hidden rounded-lg"
               style={{
-                boxShadow: "10px 10px 0px #9E9A9A",
-                border: "1px solid rgba(158,154,154,0.4)",
+                boxShadow: "10px 10px 0px #333333",
+                border: "1px solid rgba(255,255,255,0.1)",
                 height: "350px",
               }}
             >
@@ -134,12 +133,12 @@ const Gallery = () => {
                 }}
               >
                 <span
-                  className="text-xs uppercase font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest mb-1"
+                  className="text-xs uppercase font-['Roboto_Condensed',_sans-serif] font-light tracking-widest mb-1"
                   style={{ color: "#AFAFAF" }}
                 >
                   {img.category}
                 </span>
-                <h4 className="text-xl font-['Montserrat',_sans-serif] font-bold text-white">
+                <h4 className="text-xl font-['Montserrat',_sans-serif] font-light text-white">
                   {img.title}
                 </h4>
               </div>
@@ -160,7 +159,7 @@ const Gallery = () => {
           >
             <button
               onClick={() => setSelectedImg(null)}
-              className="absolute top-6 right-6 text-white text-3xl font-bold font-sans hover:text-[#AFAFAF] transition-colors"
+              className="absolute top-6 right-6 text-white text-3xl font-light font-sans hover:text-[#AFAFAF] transition-colors"
             >
               &times;
             </button>
@@ -178,16 +177,16 @@ const Gallery = () => {
                 alt={selectedImg.title}
                 className="max-w-full max-h-[70vh] object-contain"
               />
-              <div className="bg-white p-6">
+              <div className="bg-black border-t border-white/10 p-6">
                 <span
-                  className="text-xs uppercase font-['Roboto_Condensed',_sans-serif] font-bold tracking-widest"
+                  className="text-xs uppercase font-['Roboto_Condensed',_sans-serif] font-light tracking-widest"
                   style={{ color: "#AFAFAF" }}
                 >
                   {selectedImg.category}
                 </span>
                 <h3
-                  className="text-2xl font-['Montserrat',_sans-serif] font-bold mt-1"
-                  style={{ color: "#5B1E1E" }}
+                  className="text-2xl font-['Montserrat',_sans-serif] font-light mt-1"
+                  style={{ color: "#FFFFFF" }}
                 >
                   {selectedImg.title}
                 </h3>
