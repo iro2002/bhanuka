@@ -1,11 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { isAppLoaded } from "../App";
 import heroImg from "../assets/hero.png";
 
 const Hero = () => {
+  // If the app has already completed its initial loading sequence,
+  // we do not want to delay the animations on subsequent mounts.
+  const baseDelay = isAppLoaded ? 0 : 3.5;
+
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
+    <section id="home" className="relative h-[100dvh] w-full overflow-hidden">
       <img
         src={heroImg}
         alt="Bhanuka DOP"
@@ -18,7 +23,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 3.5 }}
+          transition={{ duration: 1, delay: baseDelay }}
           className="text-xs sm:text-sm font-['Roboto_Condensed',_sans-serif] font-light tracking-[0.4em] uppercase text-gray-300 mb-4"
         >
           Cinematography & Visual Storytelling
@@ -27,7 +32,7 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 3.7 }}
+          transition={{ duration: 1.2, delay: baseDelay + 0.2 }}
           className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-['Montserrat',_sans-serif] font-thin leading-none text-white mb-10"
           style={{ textShadow: "4px 4px 10px rgba(0,0,0,0.5)" }}
         >
@@ -37,7 +42,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 3.9 }}
+          transition={{ duration: 1, delay: baseDelay + 0.4 }}
         >
           <Link
             to="/work"
@@ -52,7 +57,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 4.4 }}
+        transition={{ duration: 1, delay: baseDelay + 0.9 }}
         className="absolute bottom-6 sm:bottom-10 left-6 right-6 lg:left-16 lg:right-16 flex flex-col sm:flex-row justify-between items-center sm:items-end z-10 space-y-4 sm:space-y-0"
       >
         {/* Copyright */}

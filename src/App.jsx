@@ -9,6 +9,8 @@ import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Loader from "./components/Loader";
 
+export let isAppLoaded = false;
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -16,12 +18,13 @@ function App() {
     // Show loader for 3.5 seconds to complete the cinematic intro
     const timer = setTimeout(() => {
       setLoading(false);
+      isAppLoaded = true;
     }, 3500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="bg-black min-h-screen text-white">
+    <div className="bg-black min-h-[100dvh] text-white">
       <AnimatePresence mode="wait">
         {loading && <Loader key="loader" />}
       </AnimatePresence>
